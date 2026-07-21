@@ -1,10 +1,10 @@
-// 活動資料庫 (已更新為：門徒訓練、外展行動)
+// 活動資料庫 (已更新慕道班連結，並歸類至社區活動)
 const events = [
   { 
     date: '08/17', 
     displayDate: '08/17（一）～08/21（五）', 
     title: '暑假舊約速讀營', 
-    category: '門徒訓練', 
+    category: '', 
     status: '報名中', 
     link: 'https://docs.google.com/forms/d/e/1FAIpQLSeddLvFsrpR7lhVB3WGsAhx-EBK5Q19LiDRXFqF8Sxvn0_fFw/viewform',
     image: 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=800&q=80'
@@ -13,7 +13,7 @@ const events = [
     date: '08/17', 
     displayDate: '08/17（一）～08/21（五）', 
     title: '《曠野歷險記》兒童/青年探索營', 
-    category: '外展行動', 
+    category: '', 
     status: '報名中', 
     link: 'https://docs.google.com/forms/d/e/1FAIpQLScwI9evewatMx8ZKoSzPCBIU3zPpvfBHnGs4LHCe4JeAcDdYw/viewform',
     image: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=800&q=80'
@@ -22,16 +22,16 @@ const events = [
     date: '09/06', 
     displayDate: '9月6日（日）', 
     title: '慕道班', 
-    category: '外展行動', 
+    category: '', 
     status: '報名中', 
-    link: '#',
+    link: 'https://docs.google.com/forms/d/e/1FAIpQLSfz2H0bjkg34xP-llD0RzeOsYkrX0HQFZBvGx8ayVuoRxKWVQ/viewform', // 已填入報名連結
     image: 'https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=800&q=80'
   },
   { 
     date: '09/13', 
     displayDate: '9/13 主日 12：30～1：00 (601教室)', 
     title: '新家人班', 
-    category: '門徒訓練', 
+    category: '', 
     status: '報名中', 
     link: 'https://docs.google.com/forms/d/e/1FAIpQLSdSJp39gKAKkD82Pppb9wc3X-Ar5bwvPOr1cCwxK2zypoGupg/viewform',
     image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80'
@@ -40,10 +40,10 @@ const events = [
     date: '09/20', 
     displayDate: '9月20日 早上 8：30 (教會七樓)', 
     title: '受浸聖餐聚會', 
-    category: '門徒訓練', 
+    category: '', 
     status: '報名中', 
     link: 'https://docs.google.com/forms/d/e/1FAIpQLSfz2H0bjkg34xP-llD0RzeOsYkrX0HQFZBvGx8ayVuoRxKWVQ/viewform',
-    image: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80'
+    image: 'https://images.unsplash.com/photo-1574957973698-418ac4c877af?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   },
   { 
     date: '09/01', 
