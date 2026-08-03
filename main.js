@@ -1,4 +1,4 @@
-// 活動資料庫 (已更新慕道班連結，並歸類至社區活動)
+// 活動資料庫 (已更新新家人班與慕道班的時間)
 const events = [
   { 
     date: '08/17', 
@@ -20,21 +20,21 @@ const events = [
   },
   { 
     date: '09/06', 
-    displayDate: '9月6日（日）', 
-    title: '慕道班', 
-    category: '', 
-    status: '報名中', 
-    link: 'https://docs.google.com/forms/d/e/1FAIpQLSfz2H0bjkg34xP-llD0RzeOsYkrX0HQFZBvGx8ayVuoRxKWVQ/viewform', // 已填入報名連結
-    image: 'https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=800&q=80'
-  },
-  { 
-    date: '09/13', 
-    displayDate: '9/13 主日 12：30～1：00 (601教室)', 
+    displayDate: '9/06 (日) 12:30～13:00', 
     title: '新家人班', 
     category: '', 
     status: '報名中', 
     link: 'https://docs.google.com/forms/d/e/1FAIpQLSdSJp39gKAKkD82Pppb9wc3X-Ar5bwvPOr1cCwxK2zypoGupg/viewform',
     image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80'
+  },
+  { 
+    date: '09/13', 
+    displayDate: '9/13 (日) 下午 1:00～3:45', 
+    title: '慕道班', 
+    category: '', 
+    status: '報名中', 
+    link: 'https://docs.google.com/forms/d/e/1FAIpQLSfz2H0bjkg34xP-llD0RzeOsYkrX0HQFZBvGx8ayVuoRxKWVQ/viewform',
+    image: 'https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=800&q=80'
   },
   { 
     date: '09/20', 
