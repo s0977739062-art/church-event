@@ -39,10 +39,18 @@
 
   <div class="container py-5">
     
-    <!-- 1. 左右並排的 Logo 與「近期活動」標題 -->
-    <div class="d-flex align-items-center gap mb-4">
-      <img src="photo/church封面.png" alt="教會 Logo" class="navbar-logo">
-      <h2 class="fw-bold mb-0"><i class="bi text-warning me-2"></i>近期活動</h2>
+    <!-- 1. 頂部導覽列：左側 Logo + 標題，右側「回主頁」按鈕 -->
+    <div class="d-flex align-items-center justify-content-between mb-4">
+      <!-- 左側：Logo 與近期活動 -->
+      <div class="d-flex align-items-center gap-3">
+        <img src="photo/church封面.png" alt="教會 Logo" class="navbar-logo">
+        <h2 class="fw-bold mb-0">近期活動</h2>
+      </div>
+      
+      <!-- 右側：回主頁按鈕 (你可以把 href="#" 改成你主頁的網址) -->
+      <a href="https://www.kszionch.org.tw/" class="btn btn-outline-dark rounded-pill px-3 py-2 fw-semibold small transition-hover">
+        <i class="bi bi-house-door me-1"></i> 回主頁
+      </a>
     </div>
     
     <!-- 2. 分類列：保留「全部」按鈕 -->
