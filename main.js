@@ -1,10 +1,10 @@
-// 活動資料庫 (已更新新家人班與慕道班的時間)
+// 活動資料庫 (已更新為你上傳的專屬活動照片)
 const events = [
   { 
     date: '08/17', 
     displayDate: '08/17（一）～08/21（五）', 
     title: '暑假舊約速讀營', 
-    category: '', 
+    category: '門徒訓練', 
     status: '報名中', 
     link: 'https://docs.google.com/forms/d/e/1FAIpQLSeddLvFsrpR7lhVB3WGsAhx-EBK5Q19LiDRXFqF8Sxvn0_fFw/viewform',
     image: 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=800&q=80'
@@ -13,7 +13,7 @@ const events = [
     date: '08/17', 
     displayDate: '08/17（一）～08/21（五）', 
     title: '《曠野歷險記》兒童/青年探索營', 
-    category: '', 
+    category: '社區活動', 
     status: '報名中', 
     link: 'https://docs.google.com/forms/d/e/1FAIpQLScwI9evewatMx8ZKoSzPCBIU3zPpvfBHnGs4LHCe4JeAcDdYw/viewform',
     image: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=800&q=80'
@@ -22,7 +22,7 @@ const events = [
     date: '09/06', 
     displayDate: '9/06 (日) 12:30～13:00', 
     title: '新家人班', 
-    category: '', 
+    category: '門徒訓練', 
     status: '報名中', 
     link: 'https://docs.google.com/forms/d/e/1FAIpQLSdSJp39gKAKkD82Pppb9wc3X-Ar5bwvPOr1cCwxK2zypoGupg/viewform',
     image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80'
@@ -31,16 +31,34 @@ const events = [
     date: '09/13', 
     displayDate: '9/13 (日) 下午 1:00～3:45', 
     title: '慕道班', 
-    category: '', 
+    category: '社區活動', 
     status: '報名中', 
     link: 'https://docs.google.com/forms/d/e/1FAIpQLSfz2H0bjkg34xP-llD0RzeOsYkrX0HQFZBvGx8ayVuoRxKWVQ/viewform',
     image: 'https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=800&q=80'
   },
   { 
     date: '09/20', 
+    displayDate: '9/20 主日下午 (七樓)', 
+    title: '挨家挨戶派報（全體總動員）', 
+    category: '社區活動', 
+    status: '訂便當', 
+    link: 'https://docs.google.com/forms/d/e/1FAIpQLScMyMnduWz23ELkTEC_O7UzYrwqzm1Dx9_SQg97OPRJFzjKMg/viewform',
+    image: 'photo/S__42565649.jpg' // 對應有汽車與派報的照片
+  },
+  { 
+    date: '10/31', 
+    displayDate: '09/05 ～ 12/12 (每週六下午)', 
+    title: '彩虹兒童學習營（開學仍可報名）', 
+    category: '社區活動', 
+    status: '報名中', 
+    link: 'https://forms.gle/M58n746VkEfYxm4u5',
+    image: 'photo/4BB996F6-4957-4DFE-80E4-33712B62DA01.jpg' // 對應孩子們互動的照片
+  },
+  { 
+    date: '09/20', 
     displayDate: '9月20日 早上 8：30 (教會七樓)', 
     title: '受浸聖餐聚會', 
-    category: '', 
+    category: '門徒訓練', 
     status: '報名中', 
     link: 'https://docs.google.com/forms/d/e/1FAIpQLSfz2H0bjkg34xP-llD0RzeOsYkrX0HQFZBvGx8ayVuoRxKWVQ/viewform',
     image: 'https://images.unsplash.com/photo-1574957973698-418ac4c877af?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
@@ -95,7 +113,7 @@ function renderEvents(selectedCategory = '全部') {
 
   container.innerHTML = filteredEvents.map(event => {
     let badgeClass = 'bg-light text-dark border';
-    if (event.status === '報名中') badgeClass = 'bg-dark text-white';
+    if (event.status === '報名中' || event.status === '訂便當') badgeClass = 'bg-dark text-white';
 
     return `
     <div class="col-md-4">
