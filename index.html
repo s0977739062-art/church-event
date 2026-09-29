@@ -27,31 +27,24 @@
       height: 180px;
       object-fit: cover;
     }
-    /* Logo 樣式：設定適當的高度讓它精緻不失真 */
-    .navbar-logo {
-      height: 45px;
-      width: auto;
-      object-fit: contain;
-    }
   </style>
 </head>
 <body>
 
   <div class="container py-5">
     
-    <!-- 1. 頂部導覽列：左側 Logo + 標題，右側「回主頁」按鈕 -->
-    <div class="d-flex align-items-center justify-content-between mb-4">
-      <!-- 左側：Logo 與近期活動 -->
-      <div class="d-flex align-items-center gap-3">
-        <img src="photo/church封面.png" alt="教會 Logo" class="navbar-logo">
-        <h2 class="fw-bold mb-0">近期活動</h2>
-      </div>
+    <!-- 1. 頂部導覽列：左側標題，右側「回主頁」按鈕 -->
+    <div class="d-flex align-items-center justify-content-between mb-3">
+      <h2 class="fw-bold mb-0">近期活動</h2>
       
-      <!-- 右側：回主頁按鈕 (你可以把 href="#" 改成你主頁的網址) -->
+      <!-- 右側：回主頁按鈕 (請將 href 換成你主頁的網址) -->
       <a href="https://www.kszionch.org.tw/" class="btn btn-outline-dark rounded-pill px-3 py-2 fw-semibold small transition-hover">
         <i class="bi bi-house-door me-1"></i> 回主頁
       </a>
     </div>
+
+    <!-- 💡 標題下方的質感淡灰分隔線 -->
+    <hr class="text-muted opacity-25 mb-4">
     
     <!-- 2. 分類列：保留「全部」按鈕 -->
     <div class="d-flex gap-2 mb-5 overflow-x-auto py-2 ps-2" id="category-filter">

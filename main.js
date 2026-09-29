@@ -1,79 +1,3 @@
-// 活動資料庫 (已更新為你上傳的專屬活動照片)
-const events = [
-  { 
-    date: '08/17', 
-    displayDate: '08/17（一）～08/21（五）', 
-    title: '暑假舊約速讀營', 
-    category: '門徒訓練', 
-    status: '報名中', 
-    link: 'https://docs.google.com/forms/d/e/1FAIpQLSeddLvFsrpR7lhVB3WGsAhx-EBK5Q19LiDRXFqF8Sxvn0_fFw/viewform',
-    image: 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=800&q=80'
-  },
-  { 
-    date: '08/17', 
-    displayDate: '08/17（一）～08/21（五）', 
-    title: '《曠野歷險記》兒童/青年探索營', 
-    category: '社區活動', 
-    status: '報名中', 
-    link: 'https://docs.google.com/forms/d/e/1FAIpQLScwI9evewatMx8ZKoSzPCBIU3zPpvfBHnGs4LHCe4JeAcDdYw/viewform',
-    image: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=800&q=80'
-  },
-  { 
-    date: '09/06', 
-    displayDate: '9/06 (日) 12:30～13:00', 
-    title: '新家人班', 
-    category: '門徒訓練', 
-    status: '報名中', 
-    link: 'https://docs.google.com/forms/d/e/1FAIpQLSdSJp39gKAKkD82Pppb9wc3X-Ar5bwvPOr1cCwxK2zypoGupg/viewform',
-    image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80'
-  },
-  { 
-    date: '09/13', 
-    displayDate: '9/13 (日) 下午 1:00～3:45', 
-    title: '慕道班', 
-    category: '社區活動', 
-    status: '報名中', 
-    link: 'https://docs.google.com/forms/d/e/1FAIpQLSfz2H0bjkg34xP-llD0RzeOsYkrX0HQFZBvGx8ayVuoRxKWVQ/viewform',
-    image: 'https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=800&q=80'
-  },
-  { 
-    date: '09/20', 
-    displayDate: '9/20 主日下午 (七樓)', 
-    title: '挨家挨戶派報（全體總動員）', 
-    category: '社區活動', 
-    status: '訂便當', 
-    link: 'https://docs.google.com/forms/d/e/1FAIpQLScMyMnduWz23ELkTEC_O7UzYrwqzm1Dx9_SQg97OPRJFzjKMg/viewform',
-    image: 'photo/S__42565649.jpg' // 對應有汽車與派報的照片
-  },
-  { 
-    date: '10/31', 
-    displayDate: '09/05 ～ 12/12 (每週六下午)', 
-    title: '彩虹兒童學習營（開學仍可報名）', 
-    category: '社區活動', 
-    status: '報名中', 
-    link: 'https://forms.gle/M58n746VkEfYxm4u5',
-    image: 'photo/4BB996F6-4957-4DFE-80E4-33712B62DA01.jpg' // 對應孩子們互動的照片
-  },
-  { 
-    date: '09/20', 
-    displayDate: '9月20日 早上 8：30 (教會七樓)', 
-    title: '受浸聖餐聚會', 
-    category: '門徒訓練', 
-    status: '報名中', 
-    link: 'https://docs.google.com/forms/d/e/1FAIpQLSfz2H0bjkg34xP-llD0RzeOsYkrX0HQFZBvGx8ayVuoRxKWVQ/viewform',
-    image: 'https://images.unsplash.com/photo-1574957973698-418ac4c877af?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-  },
-  { 
-    date: '09/01', 
-    displayDate: '線上旁聽', 
-    title: '撒母耳學校線上旁聽報名', 
-    category: '門徒訓練', 
-    status: '報名中', 
-    link: 'https://docs.google.com/forms/d/e/1FAIpQLScqaOiwUNbGVEahlImKNj5tf_2aZ0GT_yGQluPk36dJn_vcyw/viewform',
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80'
-  }
-];
-
 // 取得今天日期與今年年份
 const today = new Date();
 today.setHours(0, 0, 0, 0);
@@ -82,9 +6,22 @@ const currentYear = today.getFullYear();
 const container = document.getElementById('event-container');
 const categoryButtons = document.querySelectorAll('#category-filter button');
 
+// 💡 輔助函式：將 Google 雲端硬碟連結自動轉換為可直接顯示的圖片網址
+function convertDriveUrl(url) {
+  if (!url) return '';
+  // 如果是 Google 雲端硬碟連結，轉換成直接顯示圖片的格式
+  if (url.includes('drive.google.com')) {
+    const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+    if (match && match[1]) {
+      return `https://lh3.googleusercontent.com/d/${match[1]}`;
+    }
+  }
+  return url;
+}
+
 // 渲染畫面的主函式
-function renderEvents(selectedCategory = '全部') {
-  const filteredEvents = events
+function renderEvents(eventsData, selectedCategory = '全部') {
+  const filteredEvents = eventsData
     .filter(event => {
       const eventDate = new Date(`${currentYear}/${event.date}`);
       const isNotExpired = eventDate >= today;
@@ -92,8 +29,6 @@ function renderEvents(selectedCategory = '全部') {
       let matchesCategory = false;
       if (selectedCategory === '全部') {
         matchesCategory = true;
-      } else if (Array.isArray(event.category)) {
-        matchesCategory = event.category.includes(selectedCategory);
       } else {
         matchesCategory = (event.category === selectedCategory);
       }
@@ -115,10 +50,13 @@ function renderEvents(selectedCategory = '全部') {
     let badgeClass = 'bg-light text-dark border';
     if (event.status === '報名中' || event.status === '訂便當') badgeClass = 'bg-dark text-white';
 
+    // 套用轉換後的圖片網址
+    const imageUrl = convertDriveUrl(event.image);
+
     return `
     <div class="col-md-4">
       <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden transition-hover bg-white">
-        <img src="${event.image}" class="card-img-top card-cover-img" alt="${event.title}">
+        <img src="${imageUrl}" class="card-img-top card-cover-img" alt="${event.title}">
         <div class="card-body p-4 d-flex flex-column">
           <div class="mb-2">
             <span class="text-muted fw-semibold small">
@@ -141,21 +79,58 @@ function renderEvents(selectedCategory = '全部') {
   }).join('');
 }
 
-// 綁定分類按鈕點擊事件
-categoryButtons.forEach(button => {
-  button.addEventListener('click', (e) => {
-    categoryButtons.forEach(btn => {
-      btn.classList.remove('btn-dark', 'text-white', 'shadow-sm');
-      btn.classList.add('btn-light', 'text-muted');
+// 從 Google 試算表抓取資料並初始化
+async function loadEventsFromSheet() {
+  try {
+    const sheetId = '1L2W695-pGvilvh6JMyYaJwxhm4QOpFxUG-VQUoFdCOQ';
+    const csvUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv`;
+
+    const response = await fetch(csvUrl);
+    const csvText = await response.text();
+
+    const lines = csvText.split('\n');
+    const events = [];
+
+    for (let i = 1; i < lines.length; i++) {
+      const line = lines[i].trim();
+      if (!line) continue;
+
+      const row = line.split(',').map(item => item.replace(/^"|"$/g, '').trim());
+
+      if (row.length >= 7) {
+        events.push({
+          date: row[0],
+          displayDate: row[1],
+          title: row[2],
+          category: row[3],
+          status: row[4],
+          link: row[5],
+          image: row[6]
+        });
+      }
+    }
+
+    renderEvents(events, '全部');
+
+    categoryButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        categoryButtons.forEach(btn => {
+          btn.classList.remove('btn-dark', 'text-white', 'shadow-sm');
+          btn.classList.add('btn-light', 'text-muted');
+        });
+
+        e.target.classList.remove('btn-light', 'text-muted');
+        e.target.classList.add('btn-dark', 'text-white', 'shadow-sm');
+
+        const selectedCat = e.target.getAttribute('data-category');
+        renderEvents(events, selectedCat);
+      });
     });
 
-    e.target.classList.remove('btn-light', 'text-muted');
-    e.target.classList.add('btn-dark', 'text-white', 'shadow-sm');
+  } catch (error) {
+    console.error('讀取試算表失敗：', error);
+    container.innerHTML = `<div class="col-12 text-danger py-4">無法載入活動資料，請稍後再試。</div>`;
+  }
+}
 
-    const selectedCat = e.target.getAttribute('data-category');
-    renderEvents(selectedCat);
-  });
-});
-
-// 預設顯示全部
-renderEvents('全部');
+loadEventsFromSheet();
